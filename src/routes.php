@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Route;
+
 use Routing\Link;
 
 try{

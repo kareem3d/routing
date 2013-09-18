@@ -1,0 +1,25 @@
+{
+    "name": "kareem3d/routing",
+    "description": "",
+    "authors": [
+        {
+            "name": "Kareem Mohamed",
+            "email": "kareem3d.a@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.0.x",
+        "kareem3d/eloquent": "dev-master"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations",
+            "src/system"
+        ],
+        "psr-0": {
+            "Kareem3d\\Routing": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}

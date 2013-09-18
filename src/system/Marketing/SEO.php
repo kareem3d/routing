@@ -80,6 +80,6 @@ class SEO extends \BaseModel {
      */
     public function link()
     {
-        return $this->belongsTo('Core\Link\Link');
+        return $this->belongsTo('Route\Link');
     }
 }

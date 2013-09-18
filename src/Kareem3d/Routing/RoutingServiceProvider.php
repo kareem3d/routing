@@ -20,7 +20,8 @@ class RoutingServiceProvider extends ServiceProvider {
 	{
 		$this->package('kareem3d/routing');
 
-        include '/../../routes.php';
+        include __DIR__ . '/../../routes.php';
+        include __DIR__ . '/../../filters.php';
 	}
 
 	/**

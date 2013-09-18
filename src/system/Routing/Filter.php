@@ -1,6 +1,6 @@
-<?php namespace Core\Filter;
+<?php namespace Routing;
 
-use Core\Code\Code;
+use Core\Code;
 
 class Filter extends \BaseModel {
 
@@ -93,7 +93,7 @@ class Filter extends \BaseModel {
      */
     public function links()
     {
-        return $this->belongsToMany('Core\Link\Link', 'link_filter');
+        return $this->belongsToMany('Routing\Link\Link', 'link_filter');
     }
 
     /**
@@ -101,6 +101,6 @@ class Filter extends \BaseModel {
      */
     public function code()
     {
-        return $this->belongsTo('Core\Code\Code');
+        return $this->belongsTo('Core\Code');
     }
 }

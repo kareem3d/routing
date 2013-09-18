@@ -1,6 +1,6 @@
-<?php namespace Core\Link;
+<?php namespace Routing;
 
-use Core\Filter\Filter;
+use Routing\Filter;
 use PathManager\Path;
 
 class Link extends \BaseModel {
@@ -338,6 +338,6 @@ class Link extends \BaseModel {
      */
     public function filters()
     {
-        return $this->belongsToMany('Core\Filter\Filter', 'link_filter');
+        return $this->belongsToMany('Routing\Filter', 'link_filter');
     }
 }

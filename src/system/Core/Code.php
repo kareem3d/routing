@@ -1,4 +1,4 @@
-<?php namespace Core\Code;
+<?php namespace Core;
 
 class Code extends \BaseModel {
 
@@ -59,6 +59,6 @@ class Code extends \BaseModel {
      */
     public function filters()
     {
-        return $this->hasMany('Core\Filter\Filter');
+        return $this->hasMany('Routing\Filter');
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
-use Core\Filter\Filter;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Kareem3d\Routing\Filter;
 
 class CreateFiltersTable extends Migration {
 

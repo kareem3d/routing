@@ -14,13 +14,16 @@ class CreateLinksTable extends Migration {
 	{
 		Schema::create('links', function(Blueprint $table)
 		{
+            $table->engine = 'InnoDB';
 			$table->increments('id');
 
-            $table->string('uri');
             $table->string('name');
             $table->string('parameters')->nullable();
             $table->string('controller');
             $table->string('actions');
+
+            $table->integer('url_id')->unsigned();
+            $table->foreign('url_id')->references('id')->on('urls')->onDelete('CASCADE');
 
             $table->integer('linkable_id')->unsigned();
             $table->string('linkable_type');

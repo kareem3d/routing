@@ -3,26 +3,19 @@
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
-
-use Routing\Link;
+use Kareem3d\Routing\Link;
 
 try{
 
-    // Extract uri from the url
-    $requestUri = urldecode(Request::path());
-
     // Get request type(GET, POST, PUT or DELETE)
-    $requestType = Request::server('REQUEST_METHOD');
+    $requestType = strtolower(Request::server('REQUEST_METHOD'));
 
     // Get link by request type and uri
-    $link = Link::findByUriAndRequestType( $requestUri, $requestType );
+    $link = Link::getCurrent( $requestType );
 
     // If link exists
     if($link)
     {
-        // Save current link in the ioc container
-        App::instance('CurrentLink', $link);
-
         // Get link action
         $action = $link->getCurrentAction();
 
@@ -42,6 +35,7 @@ try{
             $array['after'] = $link->getConcatAfterFilters();
         }
 
-        Route::$requestType($link->getUri(), $array);
+        Route::$requestType($link->url->getUri(), $array);
     }
+
 }catch(Exception $e){}

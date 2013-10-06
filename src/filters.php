@@ -1,6 +1,7 @@
 <?php
 
-use Routing\Filter;
+use Illuminate\Support\Facades\Route;
+use Kareem3d\Routing\Filter;
 
 try{
 
@@ -10,9 +11,7 @@ try{
 
         Route::filter($filter->getName(), function() use ($code)
         {
-            $code = $code->getReadyCode();
-
-            return eval($code);
+            return $code->evaluate();
         });
     }
 
